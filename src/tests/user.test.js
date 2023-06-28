@@ -89,7 +89,7 @@ test("POST 'BASE_URL/login', should return status code 401", async()=>{
 })
 
 
-test("DELTE -> 'BASE_URL/:id', should return status code 204", async()=>{
+test("DELETE -> 'BASE_URL/:id', should return status code 204", async()=>{
     
     const res = await request(app)
         .delete(`${BASE_URL}/${userId}`)
