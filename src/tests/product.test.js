@@ -57,7 +57,7 @@ test("GET -> 'BASE_URL_PRODUCTS' should status code 200, res.body.length === 1 a
           
     expect(res.status).toBe(200)
     expect(res.body).toHaveLength(1)
-    expect(res.body[0]).toBeDefined()
+    expect(res.body[0].category).toBeDefined()
 })
 
 test("GET -> 'BASE_URL_PRODUCTS?category = category.id' should status code 200, res.body.length === 1 and res.body[0] to be defined",async()=>{
@@ -67,7 +67,7 @@ test("GET -> 'BASE_URL_PRODUCTS?category = category.id' should status code 200, 
           
     expect(res.status).toBe(200)
     expect(res.body).toHaveLength(1)
-    expect(res.body[0]).toBeDefined()
+    expect(res.body[0].category).toBeDefined()
 })
 
 test("GET ONE -> 'BASE_URL_PRODUCTS/:id' should status code 200 and res.body.title === xiaomi 12",async()=>{
@@ -77,6 +77,7 @@ test("GET ONE -> 'BASE_URL_PRODUCTS/:id' should status code 200 and res.body.tit
           
     expect(res.status).toBe(200)
     expect(res.body.title).toBe("xiaomi 12")
+    expect(res.body.category).toBeDefined()
 })
 
 test("PUT -> 'BASE_URL_PRODUCTS/:id' should status code 200 and res.body.title === body.title",async()=>{
